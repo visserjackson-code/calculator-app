@@ -1,6 +1,8 @@
-let num1; //user input
-let num2; //user input
-let operation; //user input (+, -, /, x)
+const calculate = () => {
+
+let num1 = Number(document.getElementById("num1").value); //user input
+let num2 = Number(document.getElementById("num2").value); //user input
+let operation = document.getElementById("operation").value;; //user input (+, -, /, x)
    
 if (operation === "+") {fetch(`/calculator/add?num1=${num1}&num2=${num2}`)
 .then(response => response.json())
@@ -9,7 +11,7 @@ document.getElementById("result").innerHTML = data.result;
 });
 }
 
-else if (operation === "+") {
+else if (operation === "-") {
     fetch(`/calculator/subtract?num1=${num1}&num2=${num2}`)
 .then(response => response.json())
 .then(data => {
@@ -35,4 +37,4 @@ else {
     document.getElementById("result").innerHTML =
     `Error: Invalid operand! Try again.`
 }    
-
+}
