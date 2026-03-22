@@ -1,12 +1,12 @@
 const express = require('express');
-const testRoutes = require('./routes/myTestRoutes')
+// const testRoutes = require('./routes/myTestRoutes')
 const calculatorRoutes = require('./routes/calculatorRoutes')
 
 const app = express();
 const port = 3000;
 
 app.use('/', express.static('public'));
-app.use("/mytest", testRoutes);
+// app.use("/mytest", testRoutes);
 app.use('/calculator', calculatorRoutes);
 
 app.listen(port, () => {
